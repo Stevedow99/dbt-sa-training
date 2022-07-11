@@ -2,4 +2,3 @@ version: 2
 
 models:
   - name: fct_customer_orders
-    description: "![dbt Logo](https://raw.githubusercontent.com/dbt-labs/dbt/develop/etc/dbt-logo.svg)"
