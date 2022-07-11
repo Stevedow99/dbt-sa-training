@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: fct_customer_orders
+    description: "![MV Picture](assets/mv1.jpg)"
