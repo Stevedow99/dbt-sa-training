@@ -2,3 +2,4 @@ version: 2
 
 models:
   - name: fct_customer_orders
+    description: '{{ doc("desc_final_model") }}'
