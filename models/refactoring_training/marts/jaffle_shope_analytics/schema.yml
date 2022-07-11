@@ -2,4 +2,4 @@ version: 2
 
 models:
   - name: fct_customer_orders
-    description: "![MV Picture](doc_imgs/mv1.jpg)"
+    description: "![MV Picture](doc_imgs/mva.svg)"
