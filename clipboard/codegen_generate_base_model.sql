@@ -1,4 +1,4 @@
 {{ codegen.generate_base_model(
-    source_name='salesforce_data',
-    table_name='accounts'
+    source_name='snowflake_metadata',
+    table_name='query_history'
 ) }}
