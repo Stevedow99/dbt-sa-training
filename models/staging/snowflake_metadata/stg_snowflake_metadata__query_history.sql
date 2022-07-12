@@ -69,6 +69,7 @@ query_history as (
         is_client_generated_statement
 
     from source
+    where start_time >  to_date('2022-01-01') and user_name = 'STEVE_DOWLING'
 
 )
 
