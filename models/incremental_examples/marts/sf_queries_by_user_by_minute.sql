@@ -1,13 +1,14 @@
 {{
     config(
-        materialized='incremental'
+        materialized='incremental',
+        unique_key='surrogate_key'
     )
 }}
 
 with sf_query_data as (
     select * from {{ ref('stg_snowflake_metadata__query_history') }}
     {% if is_incremental() %}
-    where start_time >= (select max(max_query_start_time) from {{ this }})
+    where start_time >= (select dateadd('hour', -1, max(max_query_start_time)) from {{ this }})
     {% endif %}
 
 ), 
@@ -26,5 +27,6 @@ queries_by_user_by_minute as (
 )
 
 select 
+    {{ dbt_utils.surrogate_key(['user_name','query_run_ts_mins']) }} as surrogate_key,
     * 
 from queries_by_user_by_minute 
