@@ -1,0 +1,49 @@
+version: 2
+
+sources:
+  - name: salesforce_data
+    database: steve_d_raw_data
+    schema: sample_salesforce_data
+    tables:
+      - name: accounts
+        columns:
+          - name: batchid
+          - name: companyextid
+          - name: company_name
+          - name: city
+          - name: state
+
+      - name: contacts
+        columns:
+          - name: batchid
+          - name: companyextid
+          - name: first_name
+          - name: last_name
+          - name: email
+          - name: country
+
+      - name: leads
+        columns:
+          - name: batchid
+          - name: first_name
+          - name: last_name
+          - name: email
+          - name: company
+          - name: lead_status
+
+      - name: opportunites
+        freshness:
+          warn_after: {count: 12, period: hour}
+          error_after: {count: 24, period: day}
+        loaded_at_field: createddate
+        columns:
+          - name: batchid
+          - name: companextid
+          - name: amount
+          - name: project_name
+          - name: oppurtunity_name
+          - name: stage
+          - name: close_date
+          - name: createddate
+          - name: modifieddate
+          - name: rand_number
