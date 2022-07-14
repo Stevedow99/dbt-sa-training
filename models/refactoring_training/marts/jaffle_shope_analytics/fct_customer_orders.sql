@@ -50,7 +50,8 @@ orders_and_customers_w_metrics as (
       partition by orders.customer_id
     )  as customer_order_ids,
 
-100 as base
+100 as base, 
+1000 / 100
 
   from orders
     inner join customers
