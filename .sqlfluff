@@ -1,0 +1,8 @@
+[sqlfluff]
+rules = L003, L006, L012, L013, L019
+
+[sqlfluff:rules:L019]
+comma_style = trailing
+
+[sqlfluff:rules:L013]
+allow_scaler = False
