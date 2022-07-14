@@ -48,7 +48,9 @@ orders_and_customers_w_metrics as (
     
     array_agg(distinct orders.order_id) over( 
       partition by orders.customer_id
-    )  as customer_order_ids
+    )  as customer_order_ids,
+
+100 as base
 
   from orders
     inner join customers
